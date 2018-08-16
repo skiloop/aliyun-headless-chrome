@@ -1,6 +1,6 @@
 
 
-FROM aliyunfc/aliyun-fc:nodejs6
+FROM aliyunfc/aliyun-fc:nodejs6.10.3
 
 # ref: https://chromium.googlesource.com/chromium/src.git/+refs
 ARG VERSION
