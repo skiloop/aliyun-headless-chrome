@@ -1,6 +1,6 @@
 
 
-FROM aliyunfc/aliyun-fc:nodejs8
+FROM aliyunfc/aliyun-fc:nodejs6
 
 # ref: https://chromium.googlesource.com/chromium/src.git/+refs
 ARG VERSION
@@ -14,6 +14,7 @@ WORKDIR /
 ADD build.sh /
 ADD .gclient /build/chromium/
 
+RUN sed -i 's/mirrors.163.com/deb.debian.org/' /etc/apt/sources.list 
 RUN sh /build.sh
 
 EXPOSE 9222
