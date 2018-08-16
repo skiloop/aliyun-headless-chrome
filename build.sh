@@ -5,10 +5,6 @@ set -e
 BUILD_BASE=$(pwd)
 VERSION=${VERSION:-master}
 
-printf "LANG=en_US.utf-8\nLC_ALL=en_US.utf-8" >> /etc/environment
-
-# install dependencies
-apt-get install -y lsb-release sudo
 
 mkdir -p build/chromium
 
