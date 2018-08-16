@@ -41,7 +41,7 @@ gclient sync --with_branch_heads --jobs 16
 cd src
 
 # install dependencies
-build/install-build-deps.sh --no-arm
+build/install-build-deps.sh --no-arm --no-prompt --no-syms --no-backwards-compatible --nacl --quick-check
 
 # specify build flags
 mkdir -p out/Headless && \
