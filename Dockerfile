@@ -14,6 +14,7 @@ WORKDIR /
 ADD build.sh /
 ADD .gclient /build/chromium/
 
+RUN sed -i 's/mirrors.163.com/deb.debian.org/' /etc/apt/sources.list 
 RUN sh /build.sh
 
 EXPOSE 9222
