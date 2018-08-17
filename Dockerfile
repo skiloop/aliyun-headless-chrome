@@ -1,6 +1,6 @@
 
 
-FROM aliyunfc/aliyun-fc:nodejs6.10.3
+FROM skiloop/aliyun-chrome-docker-base:nodejs6
 
 # ref: https://chromium.googlesource.com/chromium/src.git/+refs
 ARG VERSION
@@ -14,7 +14,7 @@ WORKDIR /
 ADD build.sh /
 ADD .gclient /build/chromium/
 
-RUN sed -i 's/mirrors.163.com/deb.debian.org/' /etc/apt/sources.list 
+RUN sed -i 's/mirrors.*.com/deb.debian.org/' /etc/apt/sources.list 
 # install dependencies
 RUN apt-get install -y lsb-release sudo
 RUN sh /build.sh
